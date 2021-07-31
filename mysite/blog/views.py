@@ -7,7 +7,7 @@ response = o que retornamos para o navegador
 """
 # Create your views here.
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(published_date__isnull=False)
 
     return render(
         request, 
